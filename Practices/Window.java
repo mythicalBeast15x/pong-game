@@ -2,9 +2,11 @@ package Practices;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class Window extends JFrame implements Runnable{
     Graphics2D g2;
+    KListener keyListner = new KListener();
     public Window(){
         this.setSize(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
         this.setTitle(Constants.SCREEN_TITLE);
@@ -13,6 +15,7 @@ public class Window extends JFrame implements Runnable{
         this.setLocationRelativeTo(null);
         //opens in the center of the screen
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.addKeyListener(keyListner);
         g2 = (Graphics2D)this.getGraphics();
     }
     public void update(double dt){
@@ -27,7 +30,14 @@ public class Window extends JFrame implements Runnable{
         //Draws Line
         g2.setColor(Color.WHITE);
         g2.drawLine(Constants.SCREEN_WIDTH/2, 0,Constants.SCREEN_WIDTH/2, Constants.SCREEN_HEIGHT);
+        //g2.drawLine(0, Constants.SCREEN_HEIGHT/2,Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT/2);  //Horizontal Line (Center)
 
+        //Pong Ball
+        g2.fillOval(450-(Constants.PONG_SIZE/2),300-(Constants.PONG_SIZE/2), Constants.PONG_SIZE,Constants.PONG_SIZE);
+
+        if(keyListner.isKeyPressed(KeyEvent.VK_UP)){
+
+        }
 
     }
     public void run(){

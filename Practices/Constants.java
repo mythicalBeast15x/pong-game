@@ -9,4 +9,6 @@ public  class Constants {
     public static final Color BACKGROUND_COLOR = new Color(10,10,10);
     public static final int SCOREBOARD_WIDTH = 160;
     public static final int SCOREBOARD_HEIGHT = 80;
+    public static final int PONG_SIZE = 15;
+
 }
