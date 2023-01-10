@@ -3,6 +3,7 @@ package Practices;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class Window extends JFrame implements Runnable{
     Graphics2D g2;
@@ -15,6 +16,7 @@ public class Window extends JFrame implements Runnable{
         this.setLocationRelativeTo(null);
         //opens in the center of the screen
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //registers keyListener
         this.addKeyListener(keyListner);
         g2 = (Graphics2D)this.getGraphics();
     }
@@ -36,6 +38,8 @@ public class Window extends JFrame implements Runnable{
         g2.fillOval(450-(Constants.PONG_SIZE/2),300-(Constants.PONG_SIZE/2), Constants.PONG_SIZE,Constants.PONG_SIZE);
 
         if(keyListner.isKeyPressed(KeyEvent.VK_UP)){
+
+        }else if(keyListner.isKeyPressed(KeyEvent.VK_UP)){
 
         }
 
